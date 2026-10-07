@@ -48,6 +48,24 @@ section {
   border-bottom: 2px solid var(--red);
 }
 
+.menu-toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu-toggle:checked ~ .navbar-collapse {
+  display: block;
+}
+
+.navbar-toggler {
+  cursor: pointer;
+}
+
+.menu-toggle:focus-visible + .navbar-toggler {
+  box-shadow: 0 0 0 0.2rem rgba(200, 16, 46, 0.6);
+}
+
 .kicker {
   color: var(--red);
   text-transform: uppercase;
@@ -363,9 +381,27 @@ section {
   margin-bottom: 1rem;
 }
 
-.accordion-button:not(.collapsed) {
+.accordion-item {
+  overflow: hidden;
+}
+
+.accordion-button {
+  cursor: pointer;
+  list-style: none;
+}
+
+.accordion-button::-webkit-details-marker {
+  display: none;
+}
+
+details[open] > .accordion-button {
   background-color: var(--red);
   color: white;
+}
+
+details[open] > .accordion-button::after {
+  transform: rotate(-180deg);
+  filter: brightness(0) invert(1);
 }
 
 .accordion-button:focus {
@@ -405,6 +441,11 @@ section {
 
 .footer .logo {
   font-size: 1.1rem;
+}
+
+.credits {
+  font-size: 0.8rem;
+  opacity: 0.6;
 }
 
 .footer-link {

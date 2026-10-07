@@ -16,9 +16,10 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-ink sticky-top">
       <div class="container">
         <a class="navbar-brand logo" href="index.html">WALK <span>ON</span></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">
+        <label for="menu-toggle" class="navbar-toggler">
           <span class="navbar-toggler-icon"></span>
-        </button>
+        </label>
         <div class="collapse navbar-collapse" id="menu">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
@@ -152,30 +153,18 @@
               <p class="kicker">Before you buy</p>
               <h2 class="section-title tips-title">Good to know</h2>
               <div class="accordion" id="tips">
-                <div class="accordion-item">
-                  <h3 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#tip1" aria-expanded="true" aria-controls="tip1">How do I get a ticket?</button>
-                  </h3>
-                  <div id="tip1" class="accordion-collapse collapse show" data-bs-parent="#tips">
-                    <div class="accordion-body">Most home tickets go to club members through a ballot, so become a member before the season starts.</div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h3 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tip2" aria-expanded="false" aria-controls="tip2">Are there cheaper tickets?</button>
-                  </h3>
-                  <div id="tip2" class="accordion-collapse collapse" data-bs-parent="#tips">
-                    <div class="accordion-body">Junior and local tickets cost £9, and young adults aged 22 to 24 pay half the adult price.</div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h3 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tip3" aria-expanded="false" aria-controls="tip3">What should I bring?</button>
-                  </h3>
-                  <div id="tip3" class="accordion-collapse collapse" data-bs-parent="#tips">
-                    <div class="accordion-body">Your ticket on your phone, a red scarf and a warm jacket. Leave big bags at home.</div>
-                  </div>
-                </div>
+                <details class="accordion-item" name="tips" open>
+                  <summary class="accordion-button collapsed">How do I get a ticket?</summary>
+                  <div class="accordion-body">Most home tickets go to club members through a ballot, so become a member before the season starts.</div>
+                </details>
+                <details class="accordion-item" name="tips">
+                  <summary class="accordion-button collapsed">Are there cheaper tickets?</summary>
+                  <div class="accordion-body">Junior and local tickets cost £9, and young adults aged 22 to 24 pay half the adult price.</div>
+                </details>
+                <details class="accordion-item" name="tips">
+                  <summary class="accordion-button collapsed">What should I bring?</summary>
+                  <div class="accordion-body">Your ticket on your phone, a red scarf and a warm jacket. Leave big bags at home.</div>
+                </details>
               </div>
             </aside>
           </div>
@@ -192,48 +181,48 @@
             <form class="plan-form row g-3">
               <div class="col-12 col-md-6">
                 <label for="name" class="form-label">Your name</label>
-                <input type="text" class="form-control" id="name" required>
+                <input type="text" class="form-control" id="name" name="name" required>
               </div>
               <div class="col-12 col-md-6">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" required>
+                <input type="email" class="form-control" id="email" name="email" required>
               </div>
               <div class="col-12 col-md-6">
                 <label for="match" class="form-label">Which match?</label>
-                <select class="form-select" id="match">
-                  <option>Premier League match</option>
-                  <option>Champions League night</option>
-                  <option>Cup match</option>
+                <select class="form-select" id="match" name="match">
+                  <option value="premier-league">Premier League match</option>
+                  <option value="champions-league">Champions League night</option>
+                  <option value="cup">Cup match</option>
                 </select>
               </div>
               <div class="col-12 col-md-6">
                 <label for="fans" class="form-label">Number of fans</label>
-                <input type="number" class="form-control" id="fans" min="1" max="4" value="1">
+                <input type="number" class="form-control" id="fans" name="fans" min="1" max="4" value="1">
               </div>
               <fieldset class="col-12">
                 <legend class="form-label">Favourite stand</legend>
                 <div class="d-flex flex-wrap gap-3">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="stand" id="kop" checked>
+                    <input class="form-check-input" type="radio" name="stand" id="kop" value="kop" checked>
                     <label class="form-check-label" for="kop">The Kop</label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="stand" id="main">
+                    <input class="form-check-input" type="radio" name="stand" id="main" value="main">
                     <label class="form-check-label" for="main">Main Stand</label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="stand" id="dalglish">
+                    <input class="form-check-input" type="radio" name="stand" id="dalglish" value="dalglish">
                     <label class="form-check-label" for="dalglish">Sir Kenny Dalglish</label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="stand" id="road">
+                    <input class="form-check-input" type="radio" name="stand" id="road" value="anfield-road">
                     <label class="form-check-label" for="road">Anfield Road</label>
                   </div>
                 </div>
               </fieldset>
               <div class="col-12">
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="first">
+                  <input class="form-check-input" type="checkbox" id="first" name="first-visit" value="yes">
                   <label class="form-check-label" for="first">This is my first time at Anfield</label>
                 </div>
               </div>
@@ -250,11 +239,13 @@
 
   <footer class="footer">
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 text-center">
-      <p class="mb-0"><span class="logo">WALK <span>ON</span></span> · A student fan project, not affiliated with Liverpool FC.</p>
+      <div>
+        <p class="mb-0"><span class="logo">WALK <span>ON</span></span> · A student fan project, not affiliated with Liverpool FC.</p>
+        <p class="credits mb-0">Fonts: Anton and Inter from Google Fonts · Built with Bootstrap 5</p>
+      </div>
       <a href="#" class="footer-link">Back to top ↑</a>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
