@@ -75,6 +75,16 @@ section {
   margin-bottom: 0.75rem;
 }
 
+:root {
+  scroll-behavior: auto;
+}
+
+:is(a, button, input, select, .navbar-toggler):focus-visible {
+  outline: 3px solid #fff !important;
+  outline-offset: 0;
+  box-shadow: 0 0 0 6px var(--red) !important;
+}
+
 .section-title,
 .hero-title {
   font-family: var(--title-font);
@@ -98,6 +108,14 @@ section {
 .btn-red:focus {
   background-color: var(--red-dark);
   color: white;
+  transform: translateY(-2px);
+}
+
+.btn-outline-light {
+  transition: transform 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.btn-outline-light:hover {
   transform: translateY(-2px);
 }
 
@@ -261,6 +279,61 @@ section {
   font-size: 1.2rem;
 }
 
+.legend-photo {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.legend-card {
+  border: none;
+  border-left: 5px solid var(--red);
+  border-radius: 0.75rem;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.legend-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 1rem 2rem rgba(20, 17, 15, 0.15);
+}
+
+.legend-number {
+  font-family: var(--title-font);
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--red);
+}
+
+.legend-card .card-title {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.legend-role {
+  color: var(--red);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.legend-facts {
+  padding-left: 1.1rem;
+  margin: 0;
+}
+
+.anfield-photo {
+  margin: 0;
+  background-color: var(--ink);
+}
+
+.anfield-photo img {
+  display: block;
+  width: 100%;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
 .numbers {
   background-color: var(--ink);
   padding: 4rem 0;
@@ -329,7 +402,7 @@ section {
   color: var(--red);
 }
 
-.step-body h2 {
+.step-body h3 {
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 0.25rem;
@@ -387,25 +460,16 @@ section {
 
 .accordion-button {
   cursor: pointer;
-  list-style: none;
 }
 
-.accordion-button::-webkit-details-marker {
-  display: none;
-}
-
-details[open] > .accordion-button {
+.accordion-button:not(.collapsed) {
   background-color: var(--red);
   color: white;
-}
-
-details[open] > .accordion-button::after {
-  transform: rotate(-180deg);
-  filter: brightness(0) invert(1);
-}
-
-.accordion-button:focus {
   box-shadow: none;
+}
+
+.accordion-button:not(.collapsed)::after {
+  filter: brightness(0) invert(1);
 }
 
 .plan {
@@ -430,6 +494,56 @@ details[open] > .accordion-button::after {
 .plan-form .form-check-input:checked {
   background-color: var(--red);
   border-color: var(--red);
+}
+
+.timeline-tools {
+  max-width: 75rem;
+  margin: 0 auto 1.5rem;
+  color: var(--cream);
+}
+
+.timeline-count {
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.timeline-empty {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: var(--ink-soft);
+  border-left: 4px solid var(--red);
+  border-radius: 0.75rem;
+  color: var(--cream);
+  text-align: center;
+}
+
+.field-error {
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ff8a9b;
+}
+
+.field-error:empty {
+  display: none;
+}
+
+.plan-form .form-control.is-invalid,
+.plan-form .form-select.is-invalid {
+  border-color: #ff8a9b;
+  background-image: none;
+  padding-right: 0.75rem;
+}
+
+.form-success {
+  background-color: var(--green);
+  color: white;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  text-align: center;
 }
 
 .footer {

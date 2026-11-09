@@ -41,65 +41,33 @@
       </div>
     </section>
 
-    <section class="timeline-section">
-      <div class="timeline">
-        <article class="step">
-          <time class="step-time">11:00</time>
-          <div class="step-body">
-            <h2>Arrive in Liverpool</h2>
-            <p>Get off at Lime Street station and have breakfast in the city centre.</p>
+    <figure class="anfield-photo">
+      <img src="images/Anfield.jpg" alt="Anfield stadium with the Kop stand on a matchday" class="img-fluid">
+    </figure>
+
+    <section class="timeline-section" aria-labelledby="timeline-heading">
+      <h2 id="timeline-heading" class="visually-hidden">Matchday timeline</h2>
+      <div class="timeline-tools" role="search">
+        <div class="row g-3 align-items-end">
+          <div class="col-12 col-md-6">
+            <label for="step-search" class="form-label">Search the plan</label>
+            <input type="search" class="form-control" id="step-search" placeholder="Try &quot;bus&quot; or &quot;scarf&quot;" autocomplete="off">
           </div>
-        </article>
-        <article class="step">
-          <time class="step-time">12:45</time>
-          <div class="step-body">
-            <h2>Head to Anfield</h2>
-            <p>Take the 917 express bus from near Lime Street (about 15 minutes), the Soccerbus from Sandhills station, or walk 3 km.</p>
+          <div class="col-12 col-md-6">
+            <label for="step-category" class="form-label">Show</label>
+            <select class="form-select" id="step-category">
+              <option value="all">All steps</option>
+              <option value="travel">Travel</option>
+              <option value="food">Food</option>
+              <option value="stadium">Around the stadium</option>
+              <option value="match">The match</option>
+            </select>
           </div>
-        </article>
-        <article class="step">
-          <time class="step-time">13:15</time>
-          <div class="step-body">
-            <h2>Walk around the stadium</h2>
-            <p>See the Shankly Gates, the Paisley Gateway and the Hillsborough memorial.</p>
-          </div>
-        </article>
-        <article class="step">
-          <time class="step-time">14:00</time>
-          <div class="step-body">
-            <h2>Grab some food</h2>
-            <p>Try a pie from a local bakery and soak up the atmosphere in the streets.</p>
-          </div>
-        </article>
-        <article class="step">
-          <time class="step-time">14:30</time>
-          <div class="step-body">
-            <h2>Find your seat</h2>
-            <p>Go in early. Watching the stands fill up is part of the show.</p>
-          </div>
-        </article>
-        <article class="step step-big">
-          <time class="step-time">14:55</time>
-          <div class="step-body">
-            <h2>The anthem</h2>
-            <p>Scarves up. All 61,276 fans sing "You'll Never Walk Alone".</p>
-          </div>
-        </article>
-        <article class="step">
-          <time class="step-time">15:00</time>
-          <div class="step-body">
-            <h2>Kick-off</h2>
-            <p>90 minutes of noise. Sing along with the Kop.</p>
-          </div>
-        </article>
-        <article class="step">
-          <time class="step-time">16:55</time>
-          <div class="step-body">
-            <h2>Final whistle</h2>
-            <p>Special buses take fans back to the city centre after the game.</p>
-          </div>
-        </article>
+        </div>
+        <p id="step-count" class="timeline-count" aria-live="polite"></p>
       </div>
+      <div class="timeline" id="timeline"></div>
+      <p id="timeline-empty" class="timeline-empty" hidden>Nothing found. Try another word or choose "All steps".</p>
     </section>
 
     <section class="py-5 bg-cream">
@@ -153,18 +121,30 @@
               <p class="kicker">Before you buy</p>
               <h2 class="section-title tips-title">Good to know</h2>
               <div class="accordion" id="tips">
-                <details class="accordion-item" name="tips" open>
-                  <summary class="accordion-button collapsed">How do I get a ticket?</summary>
-                  <div class="accordion-body">Most home tickets go to club members through a ballot, so become a member before the season starts.</div>
-                </details>
-                <details class="accordion-item" name="tips">
-                  <summary class="accordion-button collapsed">Are there cheaper tickets?</summary>
-                  <div class="accordion-body">Junior and local tickets cost £9, and young adults aged 22 to 24 pay half the adult price.</div>
-                </details>
-                <details class="accordion-item" name="tips">
-                  <summary class="accordion-button collapsed">What should I bring?</summary>
-                  <div class="accordion-body">Your ticket on your phone, a red scarf and a warm jacket. Leave big bags at home.</div>
-                </details>
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button" type="button" id="tip-1-button" aria-expanded="true" aria-controls="tip-1">How do I get a ticket?</button>
+                  </h3>
+                  <div class="accordion-collapse" id="tip-1" role="region" aria-labelledby="tip-1-button">
+                    <div class="accordion-body">Most home tickets go to club members through a ballot, so become a member before the season starts.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" id="tip-2-button" aria-expanded="false" aria-controls="tip-2">Are there cheaper tickets?</button>
+                  </h3>
+                  <div class="accordion-collapse" id="tip-2" role="region" aria-labelledby="tip-2-button" style="display: none;">
+                    <div class="accordion-body">Junior and local tickets cost £9, and young adults aged 22 to 24 pay half the adult price.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" id="tip-3-button" aria-expanded="false" aria-controls="tip-3">What should I bring?</button>
+                  </h3>
+                  <div class="accordion-collapse" id="tip-3" role="region" aria-labelledby="tip-3-button" style="display: none;">
+                    <div class="accordion-body">Your ticket on your phone, a red scarf and a warm jacket. Leave big bags at home.</div>
+                  </div>
+                </div>
               </div>
             </aside>
           </div>
@@ -178,14 +158,26 @@
           <div class="col-12 col-lg-8">
             <p class="kicker text-center">Almost there</p>
             <h2 class="section-title text-white text-center mb-4">Plan my visit</h2>
-            <form class="plan-form row g-3">
+            <form class="plan-form row g-3" id="plan-form" novalidate>
               <div class="col-12 col-md-6">
                 <label for="name" class="form-label">Your name</label>
-                <input type="text" class="form-control" id="name" name="name" required>
+                <input type="text" class="form-control" id="name" name="name" autocomplete="name" aria-describedby="name-error" required>
+                <div class="field-error" id="name-error"></div>
               </div>
               <div class="col-12 col-md-6">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" required>
+                <input type="email" class="form-control" id="email" name="email" autocomplete="email" aria-describedby="email-error" required>
+                <div class="field-error" id="email-error"></div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="tel" class="form-control" id="phone" name="phone" autocomplete="tel" placeholder="+44 7700 900123" aria-describedby="phone-error" required>
+                <div class="field-error" id="phone-error"></div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="date" class="form-label">Match date</label>
+                <input type="date" class="form-control" id="date" name="date" aria-describedby="date-error" required>
+                <div class="field-error" id="date-error"></div>
               </div>
               <div class="col-12 col-md-6">
                 <label for="match" class="form-label">Which match?</label>
@@ -196,8 +188,9 @@
                 </select>
               </div>
               <div class="col-12 col-md-6">
-                <label for="fans" class="form-label">Number of fans</label>
-                <input type="number" class="form-control" id="fans" name="fans" min="1" max="4" value="1">
+                <label for="fans" class="form-label">Number of fans (1 to 4)</label>
+                <input type="number" class="form-control" id="fans" name="fans" min="1" max="4" value="1" aria-describedby="fans-error" required>
+                <div class="field-error" id="fans-error"></div>
               </div>
               <fieldset class="col-12">
                 <legend class="form-label">Favourite stand</legend>
@@ -229,6 +222,9 @@
               <div class="col-12 d-grid">
                 <button type="submit" class="btn btn-red btn-lg">Send my plan</button>
               </div>
+              <div class="col-12">
+                <div class="form-success" id="form-success" role="status" style="display: none;"></div>
+              </div>
             </form>
           </div>
         </div>
@@ -241,11 +237,16 @@
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 text-center">
       <div>
         <p class="mb-0"><span class="logo">WALK <span>ON</span></span> · A student fan project, not affiliated with Liverpool FC.</p>
-        <p class="credits mb-0">Fonts: Anton and Inter from Google Fonts · Built with Bootstrap 5</p>
+        <p class="credits mb-0">Photos: Anfield – AUTHOR, LICENSE · Salah – AUTHOR, LICENSE · Van Dijk – AUTHOR, LICENSE · Gerrard – AUTHOR, LICENSE (via Wikimedia Commons)</p>
       </div>
       <a href="#" class="footer-link">Back to top ↑</a>
     </div>
   </footer>
 
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/timeline.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/effects.js"></script>
 </body>
 </html>
