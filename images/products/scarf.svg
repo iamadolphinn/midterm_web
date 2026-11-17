@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="#14110f"/>
+<rect x="140" y="30" width="120" height="215" fill="#c8102e"/>
+<rect x="140" y="170" width="120" height="14" fill="#f5eee3"/>
+<rect x="140" y="196" width="120" height="14" fill="#f5eee3"/>
+<g stroke="#c8102e" stroke-width="6" stroke-linecap="round"><path d="M150 245v28M164 245v28M178 245v28M192 245v28M206 245v28M220 245v28M234 245v28M248 245v28"/></g>
+<rect x="140" y="30" width="120" height="30" fill="#9e0c24"/></svg>

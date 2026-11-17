@@ -13,6 +13,40 @@
     return d.getFullYear() + '-' + month + '-' + day;
   }
 
+  form.elements.date.min = todayString();
+
+  function label(select) {
+    return select.options[select.selectedIndex].text;
+  }
+
+  function savePlan() {
+    const auth = window.WalkOnAuth;
+    if (!auth || !auth.currentUser()) {
+      return false;
+    }
+    const stand = form.querySelector('input[name="stand"]:checked');
+    const standText = form.querySelector('label[for="' + stand.id + '"]').textContent;
+    return auth.updateUser({
+      plan: {
+        date: form.elements.date.value,
+        match: label(form.elements.match),
+        stand: standText,
+        people: Number(form.elements.fans.value)
+      }
+    });
+  }
+
+  function prefill() {
+    const auth = window.WalkOnAuth;
+    const user = auth && auth.currentUser();
+    if (user) {
+      form.elements.name.value = user.name;
+      form.elements.email.value = user.email;
+    }
+  }
+
+  prefill();
+
 
   const rules = {
     name: function (value) {
@@ -90,8 +124,10 @@
     }
 
     const visitor = form.elements.name.value.trim();
-    success.textContent = 'Thank you, ' + visitor + '! Your visit plan was sent.';
+    const saved = savePlan();
+    success.textContent = 'Thank you, ' + visitor + '! Your visit plan was sent.' + (saved ? ' It is saved in your fan account.' : ' Log in to save it to your fan account.');
     form.reset();
+    prefill();
     clearErrors();
     $(success).stop(true, true).hide().slideDown(300);
   });

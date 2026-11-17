@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account | Walk On</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <script src="js/theme.js"></script>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-ink sticky-top">
+      <div class="container">
+        <a class="navbar-brand logo" href="index.html">WALK <span>ON</span></a>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">
+        <label for="menu-toggle" class="navbar-toggler">
+          <span class="navbar-toggler-icon"></span>
+        </label>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="matchday.html">Your Matchday</a></li>
+            <li class="nav-item"><a class="nav-link" href="trophies.html">Trophies</a></li>
+            <li class="nav-item"><a class="nav-link" href="shop.html">Fan Shop <span class="cart-badge" data-cart-count hidden>0</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="matchday.html#plan">Plan My Visit</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="py-5 bg-cream">
+      <div class="container">
+        <h1 class="order-title mb-4">Fan account</h1>
+
+        <div id="guest-view" class="row g-4">
+          <div class="col-md-6">
+            <form id="signup-form" class="order-form" novalidate>
+              <h2 class="h4">Sign Up</h2>
+            <div class="mb-3">
+              <label class="form-label" for="su-name">Name</label>
+              <input class="form-control" id="su-name" name="name" type="text" autocomplete="name">
+              <div class="field-error small mt-1" data-error-for="name" role="alert"></div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="su-email">Email</label>
+              <input class="form-control" id="su-email" name="email" type="email" autocomplete="email">
+              <div class="field-error small mt-1" data-error-for="email" role="alert"></div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="su-password">Password</label>
+              <input class="form-control" id="su-password" name="password" type="password" autocomplete="new-password">
+              <div class="field-error small mt-1" data-error-for="password" role="alert"></div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="su-confirm">Repeat password</label>
+              <input class="form-control" id="su-confirm" name="confirm" type="password" autocomplete="new-password">
+              <div class="field-error small mt-1" data-error-for="confirm" role="alert"></div>
+            </div>
+              <button class="btn btn-danger" type="submit">Create account</button>
+            </form>
+          </div>
+          <div class="col-md-6">
+            <form id="login-form" class="order-form" novalidate>
+              <h2 class="h4">Log In</h2>
+            <div class="mb-3">
+              <label class="form-label" for="li-email">Email</label>
+              <input class="form-control" id="li-email" name="email" type="email" autocomplete="email">
+              <div class="field-error small mt-1" data-error-for="email" role="alert"></div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="li-password">Password</label>
+              <input class="form-control" id="li-password" name="password" type="password" autocomplete="current-password">
+              <div class="field-error small mt-1" data-error-for="password" role="alert"></div>
+            </div>
+              <button class="btn btn-danger" type="submit">Log in</button>
+              <p class="demo-note mt-3 mb-0">Demo only: accounts are saved in this browser (localStorage), not on a server.</p>
+            </form>
+          </div>
+        </div>
+
+        <div id="profile-view" hidden>
+          <div class="order-form">
+            <h2 class="h4">Welcome, <span id="profile-name"></span></h2>
+            <p class="mb-1">Email: <span id="profile-email"></span></p>
+            <p class="mb-1">Member since: <span id="profile-joined"></span></p>
+            <p id="profile-plan" class="mb-3"></p>
+            <form id="profile-form" novalidate>
+              <div class="mb-3">
+                <label class="form-label" for="pf-club">Favourite Liverpool player</label>
+                <input class="form-control" id="pf-club" name="club" type="text">
+                <div class="field-error small mt-1" data-error-for="club" role="alert"></div>
+              </div>
+              <button class="btn btn-danger" type="submit">Save profile</button>
+              <span id="profile-saved" class="ms-2" hidden>Saved ✓</span>
+            </form>
+            <button id="logout-btn" class="btn btn-outline-secondary mt-3" type="button">Log Out</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 text-center">
+      <div>
+        <p class="mb-0"><span class="logo">WALK <span>ON</span></span> · A student fan project, not affiliated with Liverpool FC.</p>
+        <p class="credits mb-0">Fonts: Anton and Inter from Google Fonts · Built with Bootstrap 5 and jQuery 3.7.1 · Code written with help from Claude (AI) · The products, names and prices are made up for this demo</p>
+      </div>
+      <a href="#" class="footer-link">Back to top ↑</a>
+    </div>
+  </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/account.js"></script>
+</body>
+</html>

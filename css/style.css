@@ -230,7 +230,7 @@ section {
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: slide 20s linear infinite;
+  animation: slide 60s linear infinite;
 }
 
 .marquee-track span {
@@ -629,4 +629,362 @@ section {
   .marquee-track {
     animation: none;
   }
+}
+
+
+.cart-badge {
+  display: inline-block;
+  min-width: 1.3rem;
+  padding: 0 0.35rem;
+  border-radius: 1rem;
+  background-color: var(--red);
+  color: white;
+  font-size: 0.7rem;
+  line-height: 1.3rem;
+  text-align: center;
+}
+
+.cart-badge[hidden] {
+  display: none;
+}
+
+.trophy-total {
+  margin: 2rem 0 0;
+  font-family: var(--title-font);
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.trophy-total strong {
+  display: block;
+  font-size: 4.5rem;
+  line-height: 1;
+  color: var(--red);
+}
+
+.cabinet {
+  max-width: 75rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: 1rem;
+}
+
+.cup-card {
+  background-color: var(--ink-soft);
+  color: var(--cream);
+  border-top: 4px solid var(--red);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: transform 0.25s, background-color 0.25s;
+}
+
+.cup-image {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.cup-body {
+  padding: 1.25rem;
+}
+
+.cup-card:hover {
+  transform: translateY(-4px);
+  background-color: #2f2824;
+}
+
+.cup-number {
+  font-family: var(--title-font);
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--red);
+}
+
+.cup-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0.25rem 0 0.5rem;
+}
+
+.cup-text {
+  opacity: 0.8;
+}
+
+.cup-years {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cup-years li {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid rgba(245, 238, 227, 0.35);
+  border-radius: 1rem;
+}
+
+.history-tools,
+.history-empty {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.history-count {
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.history {
+  list-style: none;
+  max-width: 50rem;
+  margin: 2rem auto 0;
+  padding: 0 0 0 1.5rem;
+  border-left: 3px solid var(--red);
+}
+
+.history-item {
+  position: relative;
+  padding: 0 0 1.75rem 1.5rem;
+}
+
+.history-item::before {
+  content: "";
+  position: absolute;
+  left: -2rem;
+  top: 0.45rem;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background-color: var(--red);
+  border: 3px solid var(--cream);
+}
+
+.history-year {
+  font-family: var(--title-font);
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--red);
+}
+
+.history-item h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0.25rem 0;
+}
+
+.history-item p {
+  margin: 0;
+}
+
+.history-empty {
+  padding: 1.5rem;
+  background-color: white;
+  border-left: 4px solid var(--red);
+  border-radius: 0.75rem;
+  text-align: center;
+}
+
+.shop-grid {
+  max-width: 75rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 1rem;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: var(--ink-soft);
+  color: var(--cream);
+  border-radius: 0.75rem;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+}
+
+.product-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.product-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  padding: 1.25rem;
+}
+
+.product-body h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.product-text {
+  flex: 1;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.product-price {
+  margin: 0;
+  font-family: var(--title-font);
+  font-size: 1.5rem;
+  color: var(--red);
+}
+
+.basket {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.basket-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  background-color: white;
+  border-left: 4px solid var(--red);
+  border-radius: 0.75rem;
+}
+
+.basket-name {
+  display: block;
+  font-weight: 700;
+}
+
+.basket-unit {
+  opacity: 0.7;
+}
+
+.basket-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.basket-qty {
+  min-width: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.basket-line {
+  min-width: 4.5rem;
+  text-align: right;
+}
+
+.qty-btn {
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 2px solid var(--ink);
+  border-radius: 0.5rem;
+  background-color: transparent;
+  color: var(--ink);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.qty-btn:hover:not(:disabled) {
+  background-color: var(--ink);
+  color: var(--cream);
+}
+
+.qty-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.basket-remove {
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--red-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.basket-empty {
+  padding: 1.5rem;
+  background-color: white;
+  border-left: 4px solid var(--red);
+  border-radius: 0.75rem;
+}
+
+.basket-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--title-font);
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
+.basket-total strong {
+  font-weight: 400;
+  color: var(--red);
+}
+
+.order-form {
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 1rem;
+}
+
+.order-title {
+  font-family: var(--title-font);
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.demo-note {
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+.order-form .field-error {
+  color: #b3261e;
+}
+
+.order-form .form-control.is-invalid {
+  border-color: #b3261e;
+  background-image: none;
+  padding-right: 0.75rem;
+}
+
+@media (min-width: 992px) {
+  .trophy-total strong {
+    font-size: 6rem;
+  }
+}
+
+.cabinet .cup-card .cup-image {
+  height: 180px;
+  aspect-ratio: auto;
+  object-fit: cover;
+  object-position: center;
 }

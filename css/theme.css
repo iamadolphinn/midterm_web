@@ -1,0 +1,121 @@
+.theme-toggle {
+  margin-left: 0.75rem;
+  padding: 0.35rem 0.9rem;
+  border: 2px solid var(--red);
+  border-radius: 2rem;
+  background-color: transparent;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  background-color: var(--red);
+}
+
+[data-theme="dark"] body {
+  background-color: var(--ink);
+  color: var(--cream);
+}
+
+[data-theme="dark"] .bg-cream {
+  background-color: var(--ink-soft);
+  color: var(--cream);
+}
+
+[data-theme="dark"] .ticket {
+  background-color: var(--ink-soft);
+  color: var(--cream);
+}
+
+[data-theme="dark"] .stands-table,
+[data-theme="dark"] .history-empty,
+[data-theme="dark"] .basket-row,
+[data-theme="dark"] .basket-empty,
+[data-theme="dark"] .order-form {
+  background-color: var(--ink);
+  color: var(--cream);
+}
+
+[data-theme="dark"] .stands-table tbody tr:hover th,
+[data-theme="dark"] .stands-table tbody tr:hover td {
+  background-color: #3a2a2d;
+  color: var(--cream);
+}
+
+[data-theme="dark"] .qty-btn {
+  border-color: var(--cream);
+  color: var(--cream);
+}
+
+[data-theme="dark"] .qty-btn:hover:not(:disabled) {
+  background-color: var(--cream);
+  color: var(--ink);
+}
+
+[data-theme="dark"] .table {
+  --bs-table-color: var(--cream);
+  --bs-table-bg: transparent;
+  --bs-table-border-color: #3a3330;
+}
+
+[data-theme="dark"] .text-muted,
+[data-theme="dark"] .text-secondary {
+  color: #bdb3a6 !important;
+}
+
+[data-theme="dark"] .text-dark {
+  color: var(--cream) !important;
+}
+
+[data-theme="dark"] .bg-white,
+[data-theme="dark"] .bg-light {
+  background-color: var(--ink-soft) !important;
+  color: var(--cream);
+}
+
+[data-theme="dark"] .card {
+  --bs-card-bg: var(--ink-soft);
+  --bs-card-color: var(--cream);
+  --bs-card-title-color: var(--cream);
+  background-color: var(--ink-soft);
+  color: var(--cream);
+}
+
+[data-theme="dark"] .card .card-title,
+[data-theme="dark"] .card .card-text,
+[data-theme="dark"] .card li {
+  color: var(--cream);
+}
+
+[data-theme="dark"] .stands-table caption {
+  color: #bdb3a6;
+}
+
+[data-theme="dark"] .accordion {
+  --bs-accordion-bg: var(--ink-soft);
+  --bs-accordion-color: var(--cream);
+  --bs-accordion-border-color: #3a3330;
+}
+
+[data-theme="dark"] .accordion-item,
+[data-theme="dark"] .accordion-body {
+  background-color: var(--ink-soft);
+  color: var(--cream);
+}
+
+[data-theme="dark"] .accordion-button.collapsed {
+  background-color: var(--ink-soft);
+  color: var(--cream);
+}
+
+[data-theme="dark"] .accordion-button.collapsed::after {
+  filter: invert(1);
+}
+[data-theme="dark"] .order-form .form-control { background-color: #1c1c1c; color: #f5efe6; border-color: #444; }
+[data-theme="dark"] .order-form .field-error { color: #ff8a80; }
